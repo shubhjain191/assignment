@@ -12,7 +12,11 @@ const UXSkillsDashboard = () => {
   const [selectedCandidates, setSelectedCandidates] = useState([])
   const [hoveredCandidate, setHoveredCandidate] = useState(null)
 
-  const handleCandidateClick = (candidateId) => {}
+  const handleCandidateClick = (candidateId) => {
+    setSelectedCandidates((prev) =>
+      prev.includes(candidateId) ? prev.filter((id) => id !== candidateId) : [...prev, candidateId],
+    )
+  }
 
   const viewTabs = ["Compare View"]
 
